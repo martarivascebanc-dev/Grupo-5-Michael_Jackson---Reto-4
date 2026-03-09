@@ -35,12 +35,12 @@ public class AES256 {
         // Generamos la clave
         SecretKey key = generateKey();
         String base64Key = Base64.getEncoder().encodeToString(key.getEncoded());
-        System.out.println("AES_KEY=" + base64Key);
+        System.out.println("AES_KEY=" + base64Key); // -> aqui recibiras la AES_KEY
 
         // Texto a cifrar
-        String password = "bwu3z@mt9ñe3p5";
+        String password = "password"; // -> aqui debes colocar tu password del MySQL
         String cifrado = encrypt(password, key);
-        System.out.println("DB_PASSWORD_CIFRADA=" + cifrado);
+        System.out.println("DB_PASSWORD_CIFRADA=" + cifrado); // -> aqui recibiras el password cifrado
 
         // Prueba de descifrado
         String descifrado = decrypt(cifrado, key);
