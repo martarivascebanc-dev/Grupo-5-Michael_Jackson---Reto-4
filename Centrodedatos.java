@@ -2,39 +2,29 @@
 public class Centrodedatos {
     private int id;
     private String localizacion;
+    private String nombre;
+    private int capacidad_maxima;
+    private int superficie;
 
-    public Centrodedatos (int id, String localizacion) {
+    public Centrodedatos (int id, String localizacion, String nombre, int capacidad_maxima, int superficie) {
     this.id = id;
     this.localizacion = localizacion;
-    System.out.println("Bienvenido al Cetro de datos de Donosti");
+    this.nombre = nombre;
+    this.capacidad_maxima = capacidad_maxima;
+    this.superficie = superficie;
 }
-}
-
-class Servidor {
-    private int id;
-    private int fecha;
-
-    public Servidor(int id, int fecha) {
-    this.id = id;
-    this.fecha = fecha;
-}
-}
-class Sensor {
-    private int id;
-    private String regulador;
-    private int fecha;
-
-    public Sensor(int id, String regulador, int fecha) {
-    this.id = id;
-    this.regulador = regulador;
-    System.out.println("¿Qué quieres regular?");
-}
-}
-
 public static void main(String[] args) {
-    Centrodedatos c = new Centrodedatos(1, "Donosti");
-    Servidor s = new Servidor(1, 2024);
-    Sensor sensor = new Sensor(1, "Temperatura", 2024);
-    System.out.println("Sistema iniciado");
+        Centrodedatos c = new Centrodedatos(1, "Donosti", "Base Verde", 5000, 3300000);
+        Servidor s = new Servidor(1, "01-05-2025", 600000, 8000000, 39, 5000);
+        Abrir.conexionServidor();
+        Sensores sen = new Sensores(1, "01-05-2025", "Donostia", 60000, "MWh", "Luz");
+        Abrir.conexionSensores();
+        Agua a = new Agua(1, 100000, 300000, "Buena");
+        Abrir.conexionAgua();
+        Energia e = new Energia(1, 4000000, 500000, 50000000);
+        Abrir.conexionEnergia();
+        System.out.println("Sistema iniciado");
+        
+}
 }
 //Marta
