@@ -2,6 +2,7 @@ package Java_Challenge_4;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.swing.*;
@@ -12,22 +13,8 @@ public class VentanaPrincipal {
     private static Dotenv dotenv = Dotenv.load();
 
     static String url = dotenv.get("DB_URL").trim();
-    public static void limpiarConsola() {
-        try {
-            String os = System.getProperty("os.name");
-            if (os.contains("Windows")){
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            }
-            else {
-                new ProcessBuilder("cmd", "/c", "clear").inheritIO().start().waitFor();
-            }
-        } catch (Exception  exception){
-                exception.printStackTrace();
-        }
-    }
     public static void main(String[] args) {
         
-        limpiarConsola();
         JFrame frame = new JFrame("DataCenter");
         frame.setSize(1000, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,6 +55,9 @@ public class VentanaPrincipal {
         ///          SQL            ///
         ///////////////////////////////
         String showTableSql = "select * from manager_dpto"; // -> SQL del boton: tableButton
+
+        
+
 
 
         JButton tableButton = new JButton("Mostrar tabla x");
@@ -121,46 +111,47 @@ public class VentanaPrincipal {
         tableButton.addActionListener(e -> {
             try {
                 Connection conn = dbConnection.conectar();
-                limpiarConsola();
-                Statement statement = conn.createStatement();
+                Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = statement.executeQuery(showTableSql);
+            
+
+                String [] cabezera = {};
+                Object[][] data = {};
+                
                 int columnas = rs.getMetaData().getColumnCount();
-                for (int i = 1; i <= columnas; i++) {
-                    if (i == columnas) {
-                        System.out.print(rs.getMetaData().getColumnName(i));
-                    } else {
-                        System.out.print(rs.getMetaData().getColumnName(i) + " | ");
-                    }
+                rs.last();
+                int registros = rs.getRow();
+                cabezera = new String [columnas];
+                for (int i = 0; i < columnas; i++) {
+                    cabezera[i] = rs.getMetaData().getColumnName(i+1);
                 }
-                System.out.println();
+                int i = 0;
+                data = new Object[registros][columnas];
+                rs.first();
                 while(rs.next()){
-                    for (int i = 1; i <= columnas; i++) {
-                        if (i == columnas) {
-                            System.out.print(rs.getString(i));
-                        } else {
-                            switch (i) {
-                                case 1:{
-                                    System.out.print(rs.getString(i) + "      | ");
-                                    break;
-                                }
-                                case 2:{
-                                    System.out.print(rs.getString(i) + "    | ");
-                                    break;
-                                }
-                                default:{
-                                    System.out.print(rs.getString(i) + "  | ");
-                                }
-                            }
-                        }
+                    for (int j = 1; j <= columnas; j++) {
+                        data[i][j-1] = rs.getString(j);
                     }
-                    System.out.println();
+                i++;
                 }
+                JTable table = new JTable(data, cabezera);
+                JScrollPane scrollPane = new JScrollPane(table);
+                scrollPane.setBounds(70, 100, 300, 150);
+                panel.add(scrollPane);
+                System.out.println();
             } catch (Exception ex) {
                 ex.printStackTrace();
-            }
-                
+            }     
         });
 
         frame.setVisible(true);
     }
+
+    int getQueryRowCount(Connection conn, String query) throws SQLException {
+    try (Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        ResultSet scrollableRS = statement.executeQuery(query)) {
+        scrollableRS.last();
+        return scrollableRS.getRow();
+    }
+}
 }
