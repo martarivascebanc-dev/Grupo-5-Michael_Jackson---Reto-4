@@ -107,7 +107,7 @@ public class VentanaPrincipal {
         // Ibon: guarda la query activa para saber sobre que tabla filtrar
         String[] tablaActiva = {""};
 
-        // Ibon: campos de filtro debajo de la tabla
+        // Ibon
         JLabel columnaLabel = new JLabel("Columna:");
         columnaLabel.setBounds(70, 310, 80, 30);
         columnaLabel.setVisible(false);
@@ -165,7 +165,7 @@ public class VentanaPrincipal {
             filtrarButton.setVisible(true);
             agregarButton.setVisible(true);
             volverButton.setVisible(true);
-            // Ibon: mostrar campos de filtro
+            // Ibon
             filtrarButton.addActionListener(e -> {
             columnaLabel.setVisible(true);
             columnaField.setVisible(true);
@@ -210,7 +210,7 @@ public class VentanaPrincipal {
                 panel.revalidate();
                 panel.repaint();
 
-                // Ibon
+               
                 mostrarSubBotones.run();
 
             } catch (Exception ex) {
@@ -220,7 +220,7 @@ public class VentanaPrincipal {
 
         tableButton1.addActionListener(e -> {
             try {
-                tablaActiva[0] = "SELECT * FROM energia"; // Ibon
+                tablaActiva[0] = "SELECT * FROM energia"; 
                 Connection conn = dbConnection.conectar();
                 Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = statement.executeQuery("SELECT * FROM energia");
@@ -253,7 +253,7 @@ public class VentanaPrincipal {
                 panel.revalidate();
                 panel.repaint();
 
-                // Ibon: ocultar los 3 botones y mostrar filtrar + agregar + volver
+                // Ibon
                 mostrarSubBotones.run();
 
             } catch (Exception ex) {
@@ -308,7 +308,7 @@ public class VentanaPrincipal {
                 panel.revalidate();
                 panel.repaint();
 
-                // Ibon: ocultar los 3 botones y mostrar filtrar + agregar + volver
+                // Ibon
                 mostrarSubBotones.run();
 
             } catch (Exception ex) {
@@ -316,7 +316,7 @@ public class VentanaPrincipal {
             }     
         });
 
-        // Ibon: volver
+        // Ibon
         volverButton.addActionListener(e -> {
             filtrarButton.setVisible(false);
             agregarButton.setVisible(false);
