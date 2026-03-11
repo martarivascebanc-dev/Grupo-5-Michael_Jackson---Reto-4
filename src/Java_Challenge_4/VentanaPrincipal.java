@@ -135,6 +135,7 @@ public class VentanaPrincipal {
 
         // Ibon scroll activo, se reemplaza cada vez que se muestra una tabla nueva (CHATGPT)
         JScrollPane[] scrollActivo = {null};
+
         connectDataBaseButton.addActionListener(e -> {
             try{
                 panel.add(botonesPanel);
@@ -165,15 +166,23 @@ public class VentanaPrincipal {
             filtrarButton.setVisible(true);
             agregarButton.setVisible(true);
             volverButton.setVisible(true);
-            // Ibon
-            filtrarButton.addActionListener(e -> {
+            columnaLabel.setVisible(false);
+            columnaField.setVisible(false);
+            condicionLabel.setVisible(false);
+            condicionField.setVisible(false);
+            buscarButton.setVisible(false);
+            columnaField.setText("");
+            condicionField.setText("");
+        };
+
+        // Ibon
+        filtrarButton.addActionListener(e -> {
             columnaLabel.setVisible(true);
             columnaField.setVisible(true);
             condicionLabel.setVisible(true);
             condicionField.setVisible(true);
             buscarButton.setVisible(true);
         });
-        };
 
         tableButton.addActionListener(e -> {
             try {
@@ -210,7 +219,6 @@ public class VentanaPrincipal {
                 panel.revalidate();
                 panel.repaint();
 
-               
                 mostrarSubBotones.run();
 
             } catch (Exception ex) {
@@ -330,6 +338,8 @@ public class VentanaPrincipal {
             condicionLabel.setVisible(false);
             condicionField.setVisible(false);
             buscarButton.setVisible(false);
+            columnaField.setText("");
+            condicionField.setText("");
             if (scrollActivo[0] != null) {
                 panel.remove(scrollActivo[0]);
                 scrollActivo[0] = null;
@@ -339,42 +349,49 @@ public class VentanaPrincipal {
         });
 
         // Ibon (CHATGPT)
-        buscarButton.addActionListener(e -> {
-            try {
-                String query = tablaActiva[0] + " WHERE " + columnaField.getText().trim() + " = '" + condicionField.getText().trim() + "'";
-                Connection conn = dbConnection.conectar();
-                Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-                ResultSet rs = statement.executeQuery(query);
+      
+            buscarButton.addActionListener(e -> {
+                try {
+                    String valor = condicionField.getText().trim();
+                    String query;
+                    try {
+                        Double.parseDouble(valor);
+                        query = tablaActiva[0] + " WHERE " + columnaField.getText().trim() + " = " + valor;
+                    } catch (NumberFormatException ex2) {
+                        query = tablaActiva[0] + " WHERE " + columnaField.getText().trim() + " = '" + valor + "'";
+                    }
+                    Connection conn = dbConnection.conectar();
+                    Statement statement = conn.createStatement();
+                    ResultSet rs = statement.executeQuery(query);
 
-                String [] cabezera = {};
-                Object[][] data = {};
-                int columnas = rs.getMetaData().getColumnCount();
-                rs.last();
-                int registros = rs.getRow();
-                cabezera = new String [columnas];
-                for (int i = 0; i < columnas; i++)
-                    cabezera[i] = rs.getMetaData().getColumnName(i+1);
-                int i = 0;
-                data = new Object[registros][columnas];
-                rs.first();
-                while(rs.next()){
-                    for (int j = 1; j <= columnas; j++)
-                        data[i][j-1] = rs.getString(j);
-                    i++;
+                    int columnas = rs.getMetaData().getColumnCount();
+                    String[] cabezera = new String[columnas];
+                    for (int i = 0; i < columnas; i++)
+                        cabezera[i] = rs.getMetaData().getColumnName(i+1);
+
+                    // Ibon scroll activo, se reemplaza cada vez que se muestra una tabla nueva (CHATGPT)
+                    java.util.List<Object[]> filas = new java.util.ArrayList<>();
+                    while (rs.next()) {
+                        Object[] fila = new Object[columnas];
+                        for (int j = 1; j <= columnas; j++)
+                            fila[j-1] = rs.getString(j);
+                        filas.add(fila);
+                    }
+                    Object[][] data = filas.toArray(new Object[0][]);
+
+                    if (scrollActivo[0] != null) panel.remove(scrollActivo[0]);
+                    JTable table = new JTable(data, cabezera);
+                    JScrollPane scrollPane = new JScrollPane(table);
+                    scrollPane.setBounds(70, 100, 600, 200);
+                    panel.add(scrollPane);
+                    scrollActivo[0] = scrollPane;
+                    panel.revalidate();
+                    panel.repaint();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(frame, "Error: " + ex.getMessage());
                 }
-                if (scrollActivo[0] != null) panel.remove(scrollActivo[0]);
-                JTable table = new JTable(data, cabezera);
-                JScrollPane scrollPane = new JScrollPane(table);
-                scrollPane.setBounds(70, 100, 600, 200);
-                panel.add(scrollPane);
-                scrollActivo[0] = scrollPane;
-                panel.revalidate();
-                panel.repaint();
-            } catch (Exception ex) {
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(frame, "Error: " + ex.getMessage());
-            }
-        });
+            });
 
         frame.setVisible(true);
     }
