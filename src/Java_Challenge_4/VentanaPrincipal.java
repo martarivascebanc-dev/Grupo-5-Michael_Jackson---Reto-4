@@ -136,7 +136,7 @@ public class VentanaPrincipal {
                 }
                 JTable table = new JTable(data, cabezera);
                 JScrollPane scrollPane = new JScrollPane(table);
-                scrollPane.setBounds(70, 100, 300, 150);
+                scrollPane.setBounds(70, 100, 600, 200);
                 panel.add(scrollPane);
                 System.out.println();
             } catch (Exception ex) {
