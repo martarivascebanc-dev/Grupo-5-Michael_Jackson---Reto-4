@@ -1,5 +1,5 @@
 USE centro_datos;
-
+set foreign_key_checks = 0;
 -- Tablas independientes primero
 INSERT INTO servidores (energia_consumida, potencia_maxima, temperatura, memoria_ram, fecha) VALUES
 (320.5, 500.0, 42.3, 128, '2024-01-15'),
@@ -112,3 +112,4 @@ INSERT INTO energia (id_calefaccion, id_servidores, id_aire_acondicionado, id_ce
 (6, 6, 6, 3,  521.2,  83.39, 220.0),
 (7, 7, 7, 1,  769.3, 123.09, 230.0),
 (8, 8, 8, 2,  745.8, 119.33, 230.0);
+set foreign_key_checks = 1;
