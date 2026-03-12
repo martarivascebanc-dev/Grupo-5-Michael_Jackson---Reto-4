@@ -1,13 +1,21 @@
 # Problema
-Clara se ha ido de la empresa y hay que hacer su trabajo dentro del Centro de datos. Dentro del centro de datos vamos a expandirnos, primero vamos a emplezar por Donosti y luego ampliaremos a nivel de España.
+Clara se ha ido de la empresa y hay que hacer su trabajo dentro del Centro de datos. Inicialmente trabajaremos en Donosti y luego ampliaremos a nivel de España.
 
 ## Pandas
 Dentro de este Github te vas a encontrar un programa de python en el que se van a analizar algunos datos del Centro de datos. Van a aparecer algunos gráficos representativos y datos. Lo encontraras en la rama de "Ibon" y el archivo se llama "Pandas".
 
+# Base de datos
+Los archivos de la base de datos están en la carpeta `base_de_datos`:
+```
+    └── base_de_datos/
+        ├── centro_datos.sql # Archivo SQL para montar la BBDD y contiene las consultas SQL realizadas en el mismo
+        └── datos_de_centro_datos # Archivo SQL que se monta los datos de la tablas de la base de datos
+```
+
 ## Java
 Vas a encontrar un programa de java que va a conectarse con la base de datos que hemos creado en MySQL teniendo en cuenta las entidades que va a hacer nuestra empresa más sostenible y digitalizada. Lo encontraras las clases en la rama "Marta" y el archivo se llama "Centrodedatos.java". El que conecta a la base de datos en "programación" y en la carpeta scr/Java_Challenge_4 y el archivo a ejecutar es VentanaPrincipal.java.
 
-Rama &nbsp; &rarr; &nbsp; Ibai
+Rama &nbsp; &rarr; &nbsp; Ibon
 ```
     ├── .vscode/
     |   └── settings.json
@@ -19,15 +27,15 @@ Rama &nbsp; &rarr; &nbsp; Ibai
     |   |   ├── dbConnection.class
     |   |   └── dbConnection.java # Programa que realiza la conexión a la BBDD de MySQL
     |   └── lib/
-    |       ├── dotenv-java-3.0.0.jar
-    |       └── mysql-connector-j-9.6.0.jar
+    |       ├── dotenv-java-3.0.0.jar # Archivo .jar para obtener el contenido del .env
+    |       └── mysql-connector-j-9.6.0.jar # Archivo .jar para la conexión a la BBDD de MySQL
     └── .gitignore
 ```
-Link de la ubicación del programa principal: [link](https://github.com/martarivascebanc-dev/Grupo-5-Michael_Jackson---Reto-4/tree/ibai/src/Java_Challenge_4)
+Link de la ubicación del programa principal: [link](https://github.com/martarivascebanc-dev/Grupo-5-Michael_Jackson---Reto-4/tree/ibon/src/Java_Challenge_4)
 
 ### Pasos a seguir
 Una vez que tienes toda la rama y los archivos sigue los siguientes pasos:
-1. En la misma altura de src debes crear un archivo llamado .env con el siguiente contenido:
+1. En la misma altura de `src` debes crear un archivo llamado `.env` con el siguiente contenido:
       ```
       DB_URL=jdbc:mysql://localhost:3306/ejemplo
       DB_USER=root
@@ -36,7 +44,7 @@ Una vez que tienes toda la rama y los archivos sigue los siguientes pasos:
       ```
       DB_URL &nbsp; &rarr; &nbsp; deberas colocar localhost: y el puesto y luego / y el nombre de tu BBDD  
       DB_USER &nbsp; &rarr; &nbsp; deberas poner el usuario del que te conectas a la BBDD
-2. Abre el archivo AES256 y en String password = "password"; &nbsp; &nbsp; &nbsp; &larr; &nbsp; reemplaza "password" por tu contraseña de MySQL
+2. Abre el archivo AES256 y en `String password = "password"`; &nbsp; &nbsp; &nbsp; &larr; &nbsp; reemplaza "password" por tu contraseña de MySQL
       * Obtendras lo siguiente de manera cifrada:  
             - &nbsp; AES_KEY= xxxxxxxx  
             - &nbsp; DB_PASSWORD_CIFRADA= xxxxxxxx    
@@ -50,4 +58,4 @@ Una vez que tienes toda la rama y los archivos sigue los siguientes pasos:
       DB_PASSWORD_CIFRADA=xxxxxxxxxxxxxxxxxxxxxxxx
       AES_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
       ```
-5. Si has colocado todo correctamente ejecuta el archivo VentanaPrincipal.java
+5. Si has colocado todo correctamente ejecuta el archivo `VentanaPrincipal.java`
