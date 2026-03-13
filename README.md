@@ -2,7 +2,7 @@
 Clara se ha ido de la empresa y hay que hacer su trabajo dentro del Centro de datos. Inicialmente trabajaremos en Donosti y luego ampliaremos a nivel de España.
 
 ## Pandas
-Dentro de este Github te vas a encontrar un programa de python en el que se van a analizar algunos datos del Centro de datos. Van a aparecer algunos gráficos representativos y datos. Lo encontraras en la rama de "Ibon" y el archivo se llama "Pandas".
+Dentro de este Github te vas a encontrar un programa de `.ipynb` en el que se van a analizar algunos datos del Centro de datos. Van a aparecer algunos gráficos representativos y datos. Lo encontraras en la carpeta `lenguaje_de_marcas` y el archivo se llama `analisis_de_datos.ipynb` y el archivo que analizamos es el archivo llamado ``.
 
 # Base de datos
 Los archivos de la base de datos están en la carpeta `base_de_datos`:
@@ -32,7 +32,7 @@ Encontraras el programa de java que se conecta con la base de datos que hemos cr
         |       └── mysql-connector-j-9.6.0.jar # Archivo .jar para la conexión a la BBDD de MySQL
         └── .gitignore
 ```
-Link de la ubicación del programa principal: [link](https://github.com/martarivascebanc-dev/Grupo-5-Michael_Jackson---Reto-4/tree/ibon/src/Java_Challenge_4)
+Link de la ubicación del programa principal: [link](https://github.com/martarivascebanc-dev/Grupo-5-Michael_Jackson---Reto-4/tree/main/programacion/src/Java_Challenge_4)
 
 ### Pasos a seguir
 Una vez que tienes toda la rama y los archivos sigue los siguientes pasos:
