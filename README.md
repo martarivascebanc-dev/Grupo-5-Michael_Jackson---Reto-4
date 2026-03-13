@@ -1,16 +1,34 @@
 # Problema
-Clara se ha ido de la empresa y hay que hacer su trabajo dentro del Centro de datos. Inicialmente trabajaremos en Donosti y luego ampliaremos a nivel de España.
+La responsable de gestión de datos, Clara, se ha ausentado por una baja médica prolongada dejando incompleto un proyecto de análisis de datos y gestión de consumo y sostenibilidad en el centro de datos. Nosotros tenemos el trabajo de continuar y terminar el proyecto que Clara empezo. El proyecto piloto se implementaria inicialmente en Donosti y luego la idea seria ampliarlo a nivel de España.
 
-## Pandas
+## Tecnologías utilizadas
+
+### Lenguajes de programación
+- **Python 3.12**
+- **Java 24.0.2**
+
+### Base de datos
+- **MySQL 8.0**
+
+### Librerías / Dependencias
+- Python: `pandas`, `matplotlib`, `seaborn`
+- Java: `mysql-connector-j`, `dotenv-java`
+
+### Herramientas y Entorno
+- IDE: **VSCode**
+
+## Pandas y CSV
 Dentro de este Github te vas a encontrar un programa de `.ipynb` en el que se van a analizar algunos datos del Centro de datos. Van a aparecer algunos gráficos representativos y datos. Lo encontraras en la carpeta `lenguaje_de_marcas` y el archivo se llama `analisis_de_datos.ipynb` y el archivo que analizamos es el archivo llamado `datos_data_center.csv`.
 
-# Base de datos
+## Base de datos
 Los archivos de la base de datos están en la carpeta `base_de_datos`:
 ```
     └── base_de_datos/
         ├── centro_datos.sql # Archivo SQL para montar la BBDD y contiene las consultas SQL
         └── datos_de_centro_datos.sql # Archivo SQL que se monta los datos de las tablas de la BBDD
 ```
+
+> Nota: Primero ejecutar `centro_datos.sql` y luego `datos_de_centro_datos.sql`.
 
 ## Java
 Encontraras el programa de java que se conecta con la base de datos que hemos creado en MySQL teniendo en cuenta las entidades que va a hacer nuestra empresa más sostenible y digitalizada y su ubicación es en `programación/scr/Java_Challenge_4` y el archivo a ejecutar es `VentanaPrincipal.java`.
@@ -62,3 +80,11 @@ Una vez que tienes todo el contenido de la carpeta `programacion` y sus archivos
       AES_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
       ```
 4. Si has colocado todo correctamente ejecuta el archivo `VentanaPrincipal.java`
+
+## Autores
+
+**Marta Rivas**
+**Ibon YE**
+**Ibai López**
+
+Repositorio mantenido por el grupo `Michael Jackson`.
