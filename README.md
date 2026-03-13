@@ -83,8 +83,8 @@ Una vez que tienes todo el contenido de la carpeta `programacion` y sus archivos
 
 ## Autores
 
-**Marta Rivas**
-**Ibon YE**
-**Ibai López**
+**Marta Rivas**  
+**Ibon YE**  
+**Ibai López**  
 
 Repositorio mantenido por el grupo `Michael Jackson`.
