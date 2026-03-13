@@ -1,0 +1,51 @@
+nombre_centro_datos,localizacion,agua_consumida_m3_anual,energia_consumida_MWh_anual,emisiones_CO2_toneladas,PUE,residuos_electronicos_kg,porcentaje_energia_renovable,num_servidores
+CDM-Madrid-01,Madrid,137649,349775,125.4,1.85,2300,35,480
+CDM-Barcelona-01,Barcelona,132498,297932,142.7,1.72,1950,42,390
+CDM-Valencia-01,Valencia,116069,134205,118.3,1.65,1100,58,210
+DC-04 Interxion Valencia,Valencia,116069,134205,98.5,1.60,980,61,190
+DC-05 Amazon AWS Barcelona,Barcelona,34251,390299,160.2,2.10,3100,28,520
+DC-06 Interxion Barcelona,Barcelona,81655,364119,148.7,1.95,2750,31,470
+DC-07 Amazon AWS Zaragoza,Zaragoza,33178,401695,165.3,2.15,3300,25,540
+DC-08 Equinix Bilbao,Bilbao,72018,360409,140.5,1.90,2600,33,450
+DC-09 Interxion Valencia,Valencia,79832,208138,95.2,1.55,1400,65,280
+DC-10 Microsoft Zaragoza,Zaragoza,80165,157491,88.4,1.48,1200,70,240
+DC-11 Microsoft Valencia,Valencia,179496,428017,172.6,2.20,3500,22,580
+DC-12 Amazon AWS Zaragoza,Zaragoza,65335,119665,75.3,1.38,900,78,180
+DC-13 Digital Realty Sevilla,Sevilla,47122,114444,70.1,1.35,850,80,170
+DC-14 Microsoft Sevilla,Sevilla,116469,193850,102.4,1.58,1500,60,300
+DC-15 Digital Realty Bilbao,Bilbao,80786,283273,118.9,1.70,2100,45,370
+DC-16 Equinix Valencia,Valencia,129426,184491,99.7,1.56,1350,62,260
+DC-17 Telefónica Bilbao,Bilbao,41524,333926,135.2,1.82,2400,36,420
+DC-18 Microsoft Málaga,Málaga,119961,243791,110.5,1.63,1700,55,320
+DC-19 Digital Realty Madrid,Madrid,166836,127988,82.1,1.42,950,75,185
+DC-20 Google Bilbao,Bilbao,165749,194338,104.8,1.59,1450,63,295
+DC-21 Amazon AWS Zaragoza,Zaragoza,90850,185628,100.3,1.57,1380,61,270
+DC-22 Google Sevilla,Sevilla,35832,373237,152.4,1.98,2900,29,490
+DC-23 Digital Realty Barcelona,Barcelona,60979,133665,79.8,1.40,920,77,182
+DC-24 Equinix Bilbao,Bilbao,89346,407940,168.1,2.18,3400,23,560
+DC-25 Microsoft Madrid,Madrid,58721,192019,103.6,1.58,1420,62,268
+DC-26 Amazon AWS Zaragoza,Zaragoza,140512,332446,136.7,1.83,2450,35,430
+DC-27 Digital Realty Zaragoza,Zaragoza,116102,152817,86.2,1.46,1100,72,220
+DC-28 Equinix Valencia,Valencia,83982,197757,105.9,1.60,1480,60,285
+DC-29 Digital Realty Zaragoza,Zaragoza,106523,278493,116.4,1.68,1900,47,355
+DC-30 Digital Realty Bilbao,Bilbao,23797,330973,133.8,1.81,2350,37,415
+DC-31 Microsoft Bilbao,Bilbao,76081,180134,97.6,1.55,1320,64,258
+DC-32 Google Málaga,Málaga,93343,435352,175.2,2.22,3600,21,590
+DC-33 Equinix Valencia,Valencia,60581,130486,77.4,1.39,910,79,178
+DC-34 Amazon AWS Valencia,Valencia,111204,293919,122.3,1.73,2050,43,385
+DC-35 Amazon AWS Zaragoza,Zaragoza,170426,178900,96.4,1.54,1290,66,252
+DC-36 Amazon AWS Valencia,Valencia,48531,115854,71.8,1.36,870,80,172
+DC-37 Interxion Madrid,Madrid,86060,292075,120.7,1.71,2000,44,375
+DC-38 Telefónica Barcelona,Barcelona,149054,115732,73.5,1.37,880,79,175
+DC-39 Amazon AWS Málaga,Málaga,70611,205848,107.2,1.61,1550,58,305
+DC-40 Amazon AWS Madrid,Madrid,78309,117055,74.6,1.38,895,79,177
+DC-41 Interxion Sevilla,Sevilla,108081,327668,132.5,1.80,2300,38,408
+DC-42 Microsoft Barcelona,Barcelona,175011,230579,112.8,1.65,1800,53,335
+DC-43 Microsoft Bilbao,Bilbao,64895,245754,113.9,1.66,1820,52,338
+DC-44 Microsoft Zaragoza,Zaragoza,74256,87827,62.4,1.28,780,88,155
+DC-45 Amazon AWS Málaga,Málaga,118634,329866,134.4,1.81,2380,36,418
+DC-46 Telefónica Bilbao,Bilbao,71811,210330,108.6,1.62,1580,57,310
+DC-47 Digital Realty Barcelona,Barcelona,76066,418122,170.4,2.19,3450,22,568
+DC-48 Digital Realty Sevilla,Sevilla,154857,228174,111.7,1.64,1760,54,328
+DC-49 Google Sevilla,Sevilla,76640,428269,173.8,2.21,3550,21,575
+DC-50 Microsoft Sevilla,Sevilla,177431,366279,149.6,1.97,2850,30,485
