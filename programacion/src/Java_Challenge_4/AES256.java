@@ -1,4 +1,4 @@
-package src.Java_Challenge_4;
+package Java_Challenge_4;
 
 import java.util.Base64;
 import javax.crypto.Cipher;
@@ -38,7 +38,7 @@ public class AES256 {
         System.out.println("AES_KEY=" + base64Key); // -> aqui recibiras la AES_KEY
 
         // Texto a cifrar
-        String password = "marta1"; // -> aqui debes colocar tu password del MySQL
+        String password = "password"; // -> aqui debes colocar tu password del MySQL
         String cifrado = encrypt(password, key);
         System.out.println("DB_PASSWORD_CIFRADA=" + cifrado); // -> aqui recibiras el password cifrado
 

@@ -1,7 +1,9 @@
 {
+    "java.project.sourcePaths": [
+        "src"
+    ],
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "src/lib/mysql-connector-j-9.6.0.jar",
-        "src/lib/dotenv-java-3.0.0.jar"
+        "lib\\dotenv-java-3.0.0.jar",
+        "lib\\mysql-connector-j-9.6.0.jar"
     ]
 }

@@ -1,4 +1,4 @@
-package src.Java_Challenge_4;
+package Java_Challenge_4;
 
 
 import java.sql.Connection;
