@@ -15,12 +15,13 @@ Los archivos de la base de datos están en la carpeta `base_de_datos`:
 ## Java
 Encontraras el programa de java que se conecta con la base de datos que hemos creado en MySQL teniendo en cuenta las entidades que va a hacer nuestra empresa más sostenible y digitalizada y su ubicación es en `programación/scr/Java_Challenge_4` y el archivo a ejecutar es `VentanaPrincipal.java`.
 
+Encontraras toda la documentación generada en la carpeta `programacion/doc`: [link](https://github.com/martarivascebanc-dev/Grupo-5-Michael_Jackson---Reto-4/tree/main/programacion/doc)
 
 ```
     └── programacion/
         ├── .vscode/
         |   └── settings.json
-        ├── doc/ # carpeta donde esta toda la documentación JavaDoc generado
+        ├── doc/ # carpeta donde esta toda la documentación JavaDoc documentado y generado por Ibai
         ├── lib/
         |   ├── dotenv-java-3.0.0.jar # Archivo .jar para obtener el contenido del .env
         |   └── mysql-connector-j-9.6.0.jar # Archivo .jar para la conexión a la BBDD de MySQL
