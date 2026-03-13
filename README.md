@@ -9,7 +9,7 @@ Los archivos de la base de datos están en la carpeta `base_de_datos`:
 ```
     └── base_de_datos/
         ├── centro_datos.sql # Archivo SQL para montar la BBDD y contiene las consultas SQL
-        └── datos_de_centro_datos.sql # Archivo SQL que se monta los datos de la tablas de la base de datos
+        └── datos_de_centro_datos.sql # Archivo SQL que se monta los datos de las tablas de la BBDD
 ```
 
 ## Java
