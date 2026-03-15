@@ -4,7 +4,7 @@ import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-
+// Ibai con ChatGPT
 public class AES256 {
 
     // Genera una clave AES de 128 bits
