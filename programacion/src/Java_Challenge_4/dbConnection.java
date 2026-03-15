@@ -30,6 +30,8 @@ import io.github.cdimascio.dotenv.Dotenv;
  * @version 3.0
  * @since 2026-03-04
  */
+
+// Ibai con algo de ayuda de IA
 public class dbConnection {
 
     /** Objeto Dotenv para cargar variables de entorno desde .env */
@@ -57,6 +59,8 @@ public class dbConnection {
      * 
      * @return {@link Connection} objeto de conexión a la base de datos, o {@code null} si ocurre un error.
      */
+
+    // Ibai
     public static Connection conectar() {
         Connection con = null;
         try {
