@@ -9,7 +9,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
 import io.github.cdimascio.dotenv.Dotenv;
-
+// Ibai
 public class dbConnection {
 
     // Carga las variables de entorno desde .env
