@@ -20,6 +20,8 @@ import javax.crypto.SecretKey;
  * @version 1.0
  * @since 2026-03-04
  */
+
+// Ibai con ayuda de IA
 public class AES256 {
 
     /** Genera una clave secreta AES de 128 bits.
