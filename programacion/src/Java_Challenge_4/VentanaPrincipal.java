@@ -15,35 +15,35 @@ public class VentanaPrincipal {
     static String url = dotenv.get("DB_URL").trim(); 
 /*Botones para conectar con la base de datos */
     public static void main(String[] args) {
-        
+        // Ibai
         JFrame frame = new JFrame("DataCenter");
         frame.setSize(1000, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        // Ibai
         JPanel panel = new JPanel();
         panel.setLayout(null);
         frame.add(panel);
-
+        // Ibai
         JLabel databaseLabel = new JLabel("DataCenter​");
         databaseLabel.setBounds(50,10,250,50);
         panel.add(databaseLabel);
-        
+        // Ibai
         JLabel name_databaseLabel = new JLabel("null");
         name_databaseLabel.setBounds(155,10,250,50);
         panel.add(name_databaseLabel);
-
+        // Ibai
         JPanel botonesPanel = new JPanel();
         botonesPanel.setBounds(765, 140, 195, 190);
         botonesPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         botonesPanel.setVisible(false);
-
+        // Ibai
         JButton exitButton = new JButton("X");
         exitButton.setBounds(775, 15, 175, 50);
         exitButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         exitButton.setBackground(Color.RED);
         exitButton.setFocusable(false);
         panel.add(exitButton);
-
+        // Ibai
         JButton connectDataBaseButton = new JButton("Conectar a la base de datos");
         connectDataBaseButton.setBounds(50, 350, 175, 50);
         connectDataBaseButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
@@ -51,10 +51,8 @@ public class VentanaPrincipal {
         connectDataBaseButton.setBackground(Color.GREEN);
         panel.add(connectDataBaseButton);
 
-        ///////////////////////////////
-        ///          SQL            ///
-        ///////////////////////////////
         /*Botones que se muestran el la interfaz */ 
+        //Ibai
         JButton tableButton = new JButton("Mostrar Sensores");
         tableButton.setBounds(775, 150, 175, 50);
         tableButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
@@ -62,7 +60,7 @@ public class VentanaPrincipal {
         tableButton.setFocusable(false);
         tableButton.setVisible(false);
         panel.add(tableButton);
-        
+        // Ibai
         JButton tableButton1 = new JButton("Mostrar Energia");
         tableButton1.setBounds(775, 210, 175, 50);
         tableButton1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
@@ -79,7 +77,7 @@ public class VentanaPrincipal {
         tableButton2.setFocusable(false);
         tableButton2.setVisible(false);
         panel.add(tableButton2);
-
+        // Ibon
         JButton filtrarButton = new JButton("Filtrar");
         filtrarButton.setBounds(775, 150, 175, 50);
         filtrarButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
@@ -87,7 +85,7 @@ public class VentanaPrincipal {
         filtrarButton.setFocusable(false);
         filtrarButton.setVisible(false);
         panel.add(filtrarButton);
-
+        // Ibon
         JButton eliminarButton = new JButton("Eliminar");
         eliminarButton.setBounds(775, 210, 175, 50);
         eliminarButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
@@ -113,48 +111,55 @@ public class VentanaPrincipal {
         columnaLabel.setBounds(70, 310, 80, 30);
         columnaLabel.setVisible(false);
         panel.add(columnaLabel);
-
+        
+        // Ibon
         JTextField columnaField = new JTextField();
         columnaField.setBounds(150, 310, 150, 30);
         columnaField.setVisible(false);
         panel.add(columnaField);
 
+        // Ibon
         JLabel condicionLabel = new JLabel("Condicion:");
         condicionLabel.setBounds(320, 310, 80, 30);
         condicionLabel.setVisible(false);
         panel.add(condicionLabel);
 
+        // Ibon
         JTextField condicionField = new JTextField();
         condicionField.setBounds(400, 310, 150, 30);
         condicionField.setVisible(false);
         panel.add(condicionField);
 
+        // Ibon
         JButton buscarButton = new JButton("Buscar");
         buscarButton.setBounds(560, 310, 100, 30);
         buscarButton.setVisible(false);
         panel.add(buscarButton);
 
-        //Marta
+        // Marta
         JLabel columnaLabelEliminar = new JLabel("Columna:");
         columnaLabelEliminar.setBounds(70, 310, 80, 30);
         columnaLabelEliminar.setVisible(false);
         panel.add(columnaLabelEliminar);
 
+        // Marta
         JTextField columnaFieldEliminar = new JTextField();
         columnaFieldEliminar.setBounds(150, 310, 150, 30);
         columnaFieldEliminar.setVisible(false);
         panel.add(columnaFieldEliminar);
 
+        // Marta
         JLabel condicionLabelEliminar = new JLabel("Condicion:");
         condicionLabelEliminar.setBounds(320, 310, 80, 30);
         condicionLabelEliminar.setVisible(false);
         panel.add(condicionLabelEliminar);
 
+        // Marta
         JTextField condicionFieldEliminar = new JTextField();
         condicionFieldEliminar.setBounds(400, 310, 150, 30);
         condicionFieldEliminar.setVisible(false);
         panel.add(condicionFieldEliminar);
-
+        // Marta
         JButton buscarButtonEliminar = new JButton("Buscar");
         buscarButtonEliminar.setBounds(560, 310, 100, 30);
         buscarButtonEliminar.setVisible(false);
@@ -163,6 +168,7 @@ public class VentanaPrincipal {
         // Ibon scroll activo, se reemplaza cada vez que se muestra una tabla nueva (CHATGPT)
         JScrollPane[] scrollActivo = {null};
 
+        // Ibai
         connectDataBaseButton.addActionListener(e -> {
             try{
                 panel.add(botonesPanel);
@@ -181,6 +187,7 @@ public class VentanaPrincipal {
             }
         });
 
+        // Ibai
         exitButton.addActionListener(e -> {
             System.exit(0);
         });
@@ -215,7 +222,7 @@ public class VentanaPrincipal {
 
             columnaField.requestFocusInWindow();
         });
-
+        // ibai con algo de ayuda de ChatGPT
         tableButton.addActionListener(e -> {
             try {
                 tablaActiva[0] = "SELECT * FROM sensores"; // Ibon
@@ -258,6 +265,7 @@ public class VentanaPrincipal {
             }     
         });
 
+        // Ibon
         tableButton1.addActionListener(e -> {
             try {
                 tablaActiva[0] = "SELECT * FROM energia"; 
@@ -434,7 +442,7 @@ public class VentanaPrincipal {
                     JOptionPane.showMessageDialog(frame, "Error: " + ex.getMessage());
                 }
             });
-//Marta e Ibai
+            //Marta e Ibai
             eliminarButton.addActionListener(e -> {
                 columnaLabel.setVisible(false);
                 columnaField.setVisible(false);
@@ -456,7 +464,7 @@ public class VentanaPrincipal {
                 columnaFieldEliminar.requestFocusInWindow();
             });
             
-            
+            // Marta e Ibai
             buscarButtonEliminar.addActionListener(e -> {
                 String columna = columnaFieldEliminar.getText();
                 String valor = condicionFieldEliminar.getText();
@@ -511,7 +519,7 @@ public class VentanaPrincipal {
             });
             frame.setVisible(true);
         }
-        
+        // ibai con algo de ayuda de ChatGPT
         int getQueryRowCount(Connection conn, String query) throws SQLException {
         try (Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet scrollableRS = statement.executeQuery(query)) {
