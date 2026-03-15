@@ -46,6 +46,7 @@ public class VentanaPrincipal {
         frame.setSize(1000, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Ibai
         JPanel panel = new JPanel();
         panel.setLayout(null);
         frame.add(panel);
@@ -93,7 +94,8 @@ public class VentanaPrincipal {
         tableButton.setFocusable(false);
         tableButton.setVisible(false);
         panel.add(tableButton);
-        
+
+        // Ibai
         JButton tableButton1 = new JButton("Mostrar Energia");
         tableButton1.setBounds(775, 210, 175, 50);
         tableButton1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
@@ -111,6 +113,7 @@ public class VentanaPrincipal {
         tableButton2.setVisible(false);
         panel.add(tableButton2);
 
+        // Ibon
         JButton filtrarButton = new JButton("Filtrar");
         filtrarButton.setBounds(775, 150, 175, 50);
         filtrarButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
@@ -119,6 +122,7 @@ public class VentanaPrincipal {
         filtrarButton.setVisible(false);
         panel.add(filtrarButton);
 
+        // Ibon
         JButton eliminarButton = new JButton("Eliminar");
         eliminarButton.setBounds(775, 210, 175, 50);
         eliminarButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
@@ -145,42 +149,49 @@ public class VentanaPrincipal {
         columnaLabel.setVisible(false);
         panel.add(columnaLabel);
 
+        // Ibon
         JTextField columnaField = new JTextField();
         columnaField.setBounds(150, 310, 150, 30);
         columnaField.setVisible(false);
         panel.add(columnaField);
 
+        //Ibon
         JLabel condicionLabel = new JLabel("Condicion:");
         condicionLabel.setBounds(320, 310, 80, 30);
         condicionLabel.setVisible(false);
         panel.add(condicionLabel);
-
+        
+        // Ibon
         JTextField condicionField = new JTextField();
         condicionField.setBounds(400, 310, 150, 30);
         condicionField.setVisible(false);
         panel.add(condicionField);
 
+        // Ibon
         JButton buscarButton = new JButton("Buscar");
         buscarButton.setBounds(560, 310, 100, 30);
         buscarButton.setVisible(false);
         panel.add(buscarButton);
 
-        //Marta
+        // Marta
         JLabel columnaLabelEliminar = new JLabel("Columna:");
         columnaLabelEliminar.setBounds(70, 310, 80, 30);
         columnaLabelEliminar.setVisible(false);
         panel.add(columnaLabelEliminar);
 
+        // Marta
         JTextField columnaFieldEliminar = new JTextField();
         columnaFieldEliminar.setBounds(150, 310, 150, 30);
         columnaFieldEliminar.setVisible(false);
         panel.add(columnaFieldEliminar);
 
+        // Marta
         JLabel condicionLabelEliminar = new JLabel("Condicion:");
         condicionLabelEliminar.setBounds(320, 310, 80, 30);
         condicionLabelEliminar.setVisible(false);
         panel.add(condicionLabelEliminar);
 
+        // Marta
         JTextField condicionFieldEliminar = new JTextField();
         condicionFieldEliminar.setBounds(400, 310, 150, 30);
         condicionFieldEliminar.setVisible(false);
@@ -426,8 +437,7 @@ public class VentanaPrincipal {
             }
         });
 
-        // Ibon (CHATGPT)
-    
+            // Ibon (CHATGPT)
             buscarButton.addActionListener(e -> {
                 try {
                     String valor = condicionField.getText().trim();
@@ -473,7 +483,7 @@ public class VentanaPrincipal {
                     JOptionPane.showMessageDialog(frame, "Error: " + ex.getMessage());
                 }
             });
-//Marta e Ibai
+            //Marta e Ibai
             eliminarButton.addActionListener(e -> {
                 columnaLabel.setVisible(false);
                 columnaField.setVisible(false);
@@ -495,7 +505,7 @@ public class VentanaPrincipal {
                 columnaFieldEliminar.requestFocusInWindow();
             });
             
-            
+            //Marta e Ibai
             buscarButtonEliminar.addActionListener(e -> {
                 String columna = columnaFieldEliminar.getText();
                 String valor = condicionFieldEliminar.getText();
@@ -558,6 +568,7 @@ public class VentanaPrincipal {
          * @return número de filas devueltas por la consulta.
          * @throws SQLEXception si ocurre un error al ejecutar la consulta.
          */
+        // Ibai con ayuda de la IA
         int getQueryRowCount(Connection conn, String query) throws SQLException {
         try (Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet scrollableRS = statement.executeQuery(query)) {
